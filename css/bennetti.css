@@ -1,0 +1,29 @@
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1, h3 {
+  margin-top: 10px;
+}
+
+#header{
+  border-bottom: rgb(193,135,203) 10px solid;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(91, 103, 112);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+}
+
+#buttoncol{
+  border-right: rgb(193,135,203) 10px solid;
+}
