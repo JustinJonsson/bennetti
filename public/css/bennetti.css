@@ -24,6 +24,11 @@ h1, h3 {
   color: white;
 }
 
-#buttoncol{
-  border-right: rgb(193,135,203) 10px solid;
+#buttoncol .btn {
+  width: 100%
 }
+
+.panel {
+  margin: 10px 5px;
+}
+
