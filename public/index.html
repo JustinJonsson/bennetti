@@ -2,37 +2,57 @@
 <html lang="en-US">
 <head>
   <title>Bennetti</title>
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  <script src="js/bennetti.js"></script>
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Roboto"
-        type="text/css">
+        type="text/css" />
   <link rel="stylesheet"
         href="css/bennetti.css"/>
 </head>
-<body>
-<script src="https://code.jquery.com/jquery-2.2.2.min.js"
-        integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
-<script src="js/bennetti.js"></script>
-<div class="container-fluid">
-  <div class="row" id="header">
-    <div class="col-xs-12">
-      <h1>Bennetti</h1>
-      <h3>Where's Lunch?</h3>
-    </div>
+<body ng-app="bennetti">
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" ui-sref="home" href="#">Bennetti</a>
+    <ul class="nav navbar-nav">
+      <li class="divider-vertical"></li>
+      <li ui-sref-active="active"><a ui-sref="users" href="#">User Admin</a></li>
+      <li class="divider-vertical"></li>
+      <li ui-sref-active="active"><a ui-sref="locales" href="#">Locale Admin</a></li>
+      <li class="divider-vertical"></li>
+    </ul>
   </div>
-</div>
+  </nav>
+  
+  <div ui-view></div>
+<!--
+  <script type="text/ng-template" id="/home.html">
+    <div class="page-header">
+      <h1>What's for Lunch?</h1>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="/localeadmin.html">
+    <div class="page-header">
+      <object type="text/html" data="localeadmin.html" />
+    </div>
+  </script>
+-->
+  <script type="text/ng-template" id="/useradmin.html">
+    <div class="page-header">
+      <h1>Direct User Admin</h1>
+    </div>
+  </script>
+
 </body>
 </html>
