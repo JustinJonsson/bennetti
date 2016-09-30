@@ -22,37 +22,23 @@
 </head>
 <body ng-app="bennetti">
   <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" ui-sref="home" href="#">Bennetti</a>
-    <ul class="nav navbar-nav">
-      <li class="divider-vertical"></li>
-      <li ui-sref-active="active"><a ui-sref="users" href="#">User Admin</a></li>
-      <li class="divider-vertical"></li>
-      <li ui-sref-active="active"><a ui-sref="locales" href="#">Locale Admin</a></li>
-      <li class="divider-vertical"></li>
-    </ul>
-  </div>
+    <div class="container-fluid">
+      <a class="navbar-brand" ui-sref="home" href="#">Bennetti</a>
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        <li ui-sref-active="active"><a ui-sref="users" href="#">User Admin</a></li>
+        <li class="divider-vertical"></li>
+        <li ui-sref-active="active"><a ui-sref="locales" href="#">Locale Admin</a></li>
+        <li class="divider-vertical"></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="divider-vertical"></li>
+        <li ui-sref-active="active"><a ui-sref="profile" href="#">Profile</a></li>
+      </ul>
+    </div>
   </nav>
   
   <div ui-view></div>
-<!--
-  <script type="text/ng-template" id="/home.html">
-    <div class="page-header">
-      <h1>What's for Lunch?</h1>
-    </div>
-  </script>
-
-  <script type="text/ng-template" id="/localeadmin.html">
-    <div class="page-header">
-      <object type="text/html" data="localeadmin.html" />
-    </div>
-  </script>
--->
-  <script type="text/ng-template" id="/useradmin.html">
-    <div class="page-header">
-      <h1>Direct User Admin</h1>
-    </div>
-  </script>
 
 </body>
 </html>
