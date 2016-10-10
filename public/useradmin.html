@@ -1,1 +1,24 @@
-<h1>Sourced User Admin</h1>
+<div class="container" layout="row" ng-controller="UserController as uc">
+  <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3">
+    <md-list>
+      <md-list-item>
+        Add
+      </md-list-item>
+      <md-list-item>
+        Edit
+      </md-list-item>
+      <md-list-item>
+        Delete
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
+
+  <md-content flex id="content" >
+    <md-list ng-repeat="u in uc.users">
+      <md-list-item ng-click="uc.selectUser(u)" ng-class="{'selected' : u === uc.selected }">
+        {{u.name}} | {{u.content}}
+      </md-list-item>
+      <md-divider ng-if="!$last"></md-divider>
+    </md-list>
+  </md-content>
+</div>
