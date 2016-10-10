@@ -22,12 +22,12 @@ app.config(function($stateProvider){
     ).state('users',
       {
         url: '/users',
-        templateUrl: 'users.html'
+        templateUrl: 'useradmin.html'
       }
     ).state('locales',
       {
         url: '/locales',
-        templateUrl: 'locales.html'
+        templateUrl: 'localeadmin.html'
       }
     )
   });
