@@ -1,44 +1,53 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
 <head>
-  <title>Bennetti</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-  <script src="js/bennetti.js"></script>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto"
-        type="text/css" />
-  <link rel="stylesheet"
-        href="css/bennetti.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.css" />
 </head>
-<body ng-app="bennetti">
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" ui-sref="home" href="#">Bennetti</a>
-      <ul class="nav navbar-nav">
-        <li class="divider-vertical"></li>
-        <li ui-sref-active="active"><a ui-sref="users" href="#">User Admin</a></li>
-        <li class="divider-vertical"></li>
-        <li ui-sref-active="active"><a ui-sref="locales" href="#">Locale Admin</a></li>
-        <li class="divider-vertical"></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="divider-vertical"></li>
-        <li ui-sref-active="active"><a ui-sref="profile" href="#">Profile</a></li>
-      </ul>
+
+<body ng-app="bennetti" ng-controller="MainController as mc" layout="column">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+  <script type="text/javascript" src="js/MainController.js"></script>
+  <script type="text/javascript" src="js/UserController.js"></script>
+  <script type="text/javascript" src="js/UsersDataService.js"></script>
+  <script type="text/javascript" src="js/Users.js"></script>
+  <script type="text/javascript">
+    // Include the dependency upon ngMaterial - important !!
+    angular.module('bennettimd', ['ngMaterial', 'bennetti']);
+  </script>
+
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h1><a ui-sref="home">Bennetti</a></h1>
     </div>
-  </nav>
-  
+  </md-toolbar>
+
+  <md-nav-bar nav-bar-aria-label="navigation links">
+    <md-nav-item md-nav-sref="users" name="usertab">
+      Users
+    </md-nav-item>
+    <md-nav-item md-nav-sref="locales" name="localetab">
+      Locales
+    </md-nav-item>
+  </md-nav-bar>
+
   <div ui-view></div>
 
+  <!--div flex layout="row">
+    <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3">
+      <md-list>
+        <md-list-item ng-repeat="u in uc.users">
+          <md-button ng-click="uc.selectUser(u)" ng-class="{'selected' : u === uc.selected}">
+            {{u.name}}
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+    <md-content flex layout-padding>
+      <h2>{{uc.selected.name}}</h2>
+      <p>{{uc.selected.content}}</p>
+    </md-content>
+  </div-->
 </body>
-</html>
