@@ -1,5 +1,5 @@
 function MainController( userService ) {
-  var self = this;
+/*  var self = this;
 
   self.selected     = null;
   self.users        = [ ];
@@ -16,5 +16,5 @@ function MainController( userService ) {
 
   function selectUser ( user ) {
     self.selected =  user;
-  }
+  }*/
 }

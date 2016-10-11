@@ -1,3 +1,4 @@
+/*
 function UserService($q){
   var users = [
     {
@@ -25,4 +26,4 @@ function UserService($q){
       return $q.when(users);
     }
   };
-}
+}*/

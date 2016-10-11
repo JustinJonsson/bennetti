@@ -1,4 +1,4 @@
-function UserController( userService ) {
+function UserControllerold( userService ) {
   var self = this;
 
   self.selected     = null;

@@ -2,17 +2,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.css" />
 </head>
 
-<body ng-app="bennetti" ng-controller="MainController as mc" layout="column">
+<!--<body ng-app="bennetti" ng-controller="MainController as mc" layout="column">-->
+<body ng-app="bennetti" layout="column">
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-  <script type="text/javascript" src="js/MainController.js"></script>
+<!--  <script type="text/javascript" src="js/MainController.js"></script>
   <script type="text/javascript" src="js/UserController.js"></script>
-  <script type="text/javascript" src="js/UsersDataService.js"></script>
-  <script type="text/javascript" src="js/Users.js"></script>
+  <script type="text/javascript" src="js/UsersDataService.js"></script>-->
+  <script type="text/javascript" src="js/Main.js"></script>
   <script type="text/javascript">
     // Include the dependency upon ngMaterial - important !!
     angular.module('bennettimd', ['ngMaterial', 'bennetti']);
@@ -31,23 +32,11 @@
     <md-nav-item md-nav-sref="locales" name="localetab">
       Locales
     </md-nav-item>
+    <div flex></div>
+    <md-nav-item md-nav-sref="profile" name="profiletab">
+      Profile
+    </md-nav-item>
   </md-nav-bar>
 
   <div ui-view></div>
-
-  <!--div flex layout="row">
-    <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3">
-      <md-list>
-        <md-list-item ng-repeat="u in uc.users">
-          <md-button ng-click="uc.selectUser(u)" ng-class="{'selected' : u === uc.selected}">
-            {{u.name}}
-          </md-button>
-        </md-list-item>
-      </md-list>
-    </md-sidenav>
-    <md-content flex layout-padding>
-      <h2>{{uc.selected.name}}</h2>
-      <p>{{uc.selected.content}}</p>
-    </md-content>
-  </div-->
 </body>

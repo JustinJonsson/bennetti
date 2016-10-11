@@ -15,4 +15,13 @@ Workflows
   Accommodate user list's auto vetos
   Find best based on user list's preferences. Maybe add random factor
   
-  
+
+index.html main page
+  various .html templates
+Main.js create app module and instantiate controllers and services and config.
+Controllers defined in XxxxController.js
+
+
+
+
+
