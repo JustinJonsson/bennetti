@@ -1,45 +1,11 @@
 var app = angular.module('bennetti', [ 'ngMaterial', 'ui.router' ]);
 
-/*app.controller('MainController', [
-    'userService', '$mdSidenav', '$mdBottomSheet', '$log',
-  MainController
-]);*/
+app.controller('UserController', [
+  '$scope', 'UserFactory',
+  UserController
+]);
 
-/*app.controller('UserController', [
-  'userService', '$mdSidenav', '$mdBottomSheet', '$log',
-  UserControllerold
-]);*/
-
-app.controller('UserController', ['$scope', 'UserFactory', function ($scope, UserFactory){
-  $scope.users = UserFactory.userlist;
-  console.log($scope.users);
-}]);
-
-//app.service('userService', ['$q', UserService]);
-app.factory('UserFactory', function (){
-  var Users = {};
-
-  Users.userlist = [
-    {
-      name: 'Justin Jonsson',
-      content: 'Growler'
-    },
-    {
-      name: 'Clayton Swindoll',
-      content: 'GoGo Grill'
-    },
-    {
-      name: 'Raphael Kumar',
-      content: 'Tajin'
-    },
-    {
-      name: 'Katie Shields',
-      content: 'Chopt'
-    }
-  ];
-
-  return Users;
-});
+app.factory('UserFactory', UserFactory);
 
 app.config(function($stateProvider){
     $stateProvider.state('home',

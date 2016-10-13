@@ -2,23 +2,21 @@
   <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3">
     <md-list>
       <md-list-item>
-        Add
+        <md-button>Add</md-button>
       </md-list-item>
       <md-list-item>
-        Edit
+        <md-button>Edit</md-button>
       </md-list-item>
       <md-list-item>
-        Delete
+        <md-button>Delete</md-button>
       </md-list-item>
     </md-list>
   </md-sidenav>
 
   <md-content flex id="content" ng-controller="UserController">
     <md-list>
-      <md-list-item ng-repeat="user in userlist">
-        I never see this text.
-        {{user.name}}
-        {{user.content}}
+      <md-list-item ng-repeat="user in users">
+        {{user.name}} -  {{user.content}}
       </md-list-item>
     </md-list>
   </md-content>
