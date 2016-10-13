@@ -1,10 +1,10 @@
-<div class="container" layout="row" >
-  <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3">
+<div class="container" layout="row" ng-controller="UserController">
+  <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3 autowide">
     <md-list>
       <md-list-item>
         <md-button>Add</md-button>
       </md-list-item>
-      <md-list-item>
+      <md-list-item ng-if="users.ckd" >
         <md-button>Edit</md-button>
       </md-list-item>
       <md-list-item>
@@ -13,10 +13,11 @@
     </md-list>
   </md-sidenav>
 
-  <md-content flex id="content" ng-controller="UserController">
+  <md-content flex id="content" >
     <md-list>
       <md-list-item ng-repeat="user in users">
-        {{user.name}} -  {{user.content}}
+        <md-checkbox md-no-ink="true" aria-label="checkbox" ng-model="users.ckd"></md-checkbox>
+          {{user.name}} - {{user.content}}
       </md-list-item>
     </md-list>
   </md-content>
