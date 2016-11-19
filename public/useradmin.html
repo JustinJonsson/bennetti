@@ -2,22 +2,43 @@
   <md-sidenav md-is-locked-open="true" class="md-whiteframe-z3 autowide">
     <md-list>
       <md-list-item>
-        <md-button>Add</md-button>
+        <md-button ui-sref="users.add">Add</md-button>
       </md-list-item>
       <md-list-item>
+        <md-button>Collapse All</md-button>
+      </md-list-item>
+      <!--<md-list-item>
         <md-button>Edit</md-button>
       </md-list-item>
       <md-list-item>
         <md-button>Delete</md-button>
-      </md-list-item>
+      </md-list-item>-->
     </md-list>
   </md-sidenav>
 
   <md-content flex id="content" >
+    <div ui-view></div>
     <md-list>
-      <md-list-item ng-repeat="user in users">
-        <md-checkbox md-no-ink="true" aria-label="checkbox" ng-model="user.ckd"></md-checkbox>
-          {{user.name}} - {{user.content}}
+      <md-list-item ng-class="{liexplode:toggle}" ng-repeat="user in users" ng-init="toggle=false" ng-click="toggle=!toggle">
+        <div ng-hide="toggle">{{user.login}} - {{user.name}}</div>
+
+        <div class="userexplode" ng-show="toggle">
+          <form name="userForm">
+          <md-input-container>
+            <label>Login</label>
+            <input required ng-model="user.login" />
+          </md-input-container>
+          <md-input-container>
+            <label>Name</label>
+            <input required ng-model="user.name" />
+          </md-input-container>
+          <md-input-container>
+            <label>Content</label>
+            <input ng-model="user.content" />
+          </md-input-container>
+          <md-button type="submit" class="md-primary md-raised" ng-disabled="userForm.$pristine">Submit changes</md-button>
+          </form>
+        </div>
       </md-list-item>
     </md-list>
   </md-content>

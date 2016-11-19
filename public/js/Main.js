@@ -18,6 +18,18 @@ app.config(function($stateProvider){
         url: '/users',
         templateUrl: 'useradmin.html'
       }
+    ).state('users.add',
+      {
+        parent: 'users',
+        /*url: '/users',*/
+        templateUrl: 'useradmin.add.html'
+      }
+    ).state('users.edit',
+      {
+        parent: 'users',
+        /*url: '/users',*/
+        templateUrl: 'useradmin.edit.html'
+      }
     ).state('locales',
       {
         url: '/locales',
