@@ -1,0 +1,28 @@
+administration - users
+  user interface - 2 days
+  mongo storage - 2 days 
+  server glue - 4 days
+
+administration - locales
+  user interface - 2 days
+  mongo storage - 2 days 
+  server glue - 4 days
+
+user homepage - preferences
+  mongo storage - 3 days
+  ui & server - set three veto locales - 2 days
+  ui & server - set five preferred locales - 1 day
+  set daily preference
+
+user homepage - lunch bunch
+  be able to search & invite users
+  be able to accept an invitation
+  be able to leave a bunch
+
+===========================
+
+user locale suggestion page
+  user interface
+  server glue
+  
+pretty it up later
