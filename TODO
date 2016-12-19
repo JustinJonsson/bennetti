@@ -1,3 +1,26 @@
+login & authentication - 5 days oauth/passport?
+
+user homepage - preferences
+  mongo storage - 3 days
+  ui & server - set three veto locales - 2 days
+  ui & server - set five preferred locales - 1 day
+  set daily preference
+
+user homepage - lunch bunch
+  be able to search & invite users & set lunch date & time
+  be able to accept an invitation
+  be able to leave a bunch
+  be notified of lunch selection at date & time
+
+administration - users
+  maybe just start with a server script for myself to load 'em.
+
+administration - locales
+  maybe just start with a server script for myself to load 'em.
+
+===========================
+
+
 administration - users
   user interface - 2 days
   mongo storage - 2 days 
@@ -7,19 +30,6 @@ administration - locales
   user interface - 2 days
   mongo storage - 2 days 
   server glue - 4 days
-
-user homepage - preferences
-  mongo storage - 3 days
-  ui & server - set three veto locales - 2 days
-  ui & server - set five preferred locales - 1 day
-  set daily preference
-
-user homepage - lunch bunch
-  be able to search & invite users
-  be able to accept an invitation
-  be able to leave a bunch
-
-===========================
 
 user locale suggestion page
   user interface
