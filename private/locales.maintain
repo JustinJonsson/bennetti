@@ -1,0 +1,3 @@
+{ "id" : 1000001, "name" : "Growler", "address" : { "number" : 55, "street" : "Stone Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : false, "dinein" : true, "cuisine" : [ "Pub", "Beer", "Burgers" ] }
+{ "id" : 1000002, "name" : "Ulysses", "address" : { "number" : 95, "street" : "Pearl Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : true, "cuisine" : [ "Pub", "Beer", "Burgers" ] }
+
