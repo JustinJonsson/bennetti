@@ -14,13 +14,15 @@ user homepage - lunch bunch - "People"
   be able to search & invite users & set lunch date & time - 2 days
   be able to accept an invitation - 3 days
   be able to leave a bunch - 2 days
-  be notified of lunch selection at date & time - 1 day
+  be notified on site of lunch selection at date & time - 1 day
 
   19 days + 50% contingency = ~30 days. Days are 4-hour slots.
 
 ===========================
 
 login & authentication - 8 days oauth/passport?
+
+email / sms / whatever notifications
 
 administration - users
   user interface - 2 days
