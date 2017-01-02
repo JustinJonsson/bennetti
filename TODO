@@ -4,13 +4,13 @@ administration - users
 administration - locales
   maybe just start with a server script for myself to load 'em. - 1 day
 
-user homepage - preferences
+user homepage - preferences "Places"
   mongo storage - 3 days
   ui & server - set three veto locales - 3 days
   ui & server - set five preferred locales - 1 day
   set daily preference - 1 day
 
-user homepage - lunch bunch
+user homepage - lunch bunch - "People"
   be able to search & invite users & set lunch date & time - 2 days
   be able to accept an invitation - 3 days
   be able to leave a bunch - 2 days
