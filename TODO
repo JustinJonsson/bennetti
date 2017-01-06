@@ -3,8 +3,14 @@ administration - users
 
 administration - locales
   maybe just start with a server script for myself to load 'em. - 1 day
+  did this with mongoimport --db bennetti --collection locales --drop < locales.maintain 
 
+administration - preferences
+  a json dataset mapping users to 5 yes and 3 no
+  
 user homepage - preferences "Places"
+  display the preferences I've preloaded. Check that diff users show correct data
+  Then let me set my preferences.
   mongo storage - 3 days
   ui & server - set three veto locales - 3 days
   ui & server - set five preferred locales - 1 day
