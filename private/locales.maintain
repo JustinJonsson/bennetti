@@ -1,3 +1,8 @@
 { "id" : 1000001, "name" : "Growler", "address" : { "number" : 55, "street" : "Stone Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : false, "dinein" : true, "cuisine" : [ "Pub", "Beer", "Burgers" ] }
 { "id" : 1000002, "name" : "Ulysses", "address" : { "number" : 95, "street" : "Pearl Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : true, "cuisine" : [ "Pub", "Beer", "Burgers" ] }
-
+{ "id" : 1000003, "name" : "Naya Express", "address" : { "number" : 1, "street" : "FDR Drive", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Middle Eastern" ] }
+{ "id" : 1000004, "name" : "Chop't", "address" : { "number" : 1, "street" : "FDR Drive", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Salads" ] }
+{ "id" : 1000005, "name" : "Flavors", "address" : { "number" : 27, "street" : "Whitehall Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Sandwiches", "Salads", "Pasta" ] }
+{ "id" : 1000006, "name" : "Obao", "address" : { "number" : 38, "street" : "Water Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Thai", "Asian", "Noodles", "Soup" ] }
+{ "id" : 1000007, "name" : "Dig Inn", "address" : { "number" : 80, "street" : "Broad Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Farm to Table", "Casual", "American", "Bowls" ] }
+{ "id" : 1000008, "name" : "Battery Gardens", "address" : { "number" : 1, "street" : "Battery Place", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : false, "dinein" : true, "cuisine" : [ "Beer", "Burgers" ] }
