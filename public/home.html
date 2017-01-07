@@ -3,9 +3,13 @@
     <h1>What's for lunch?</h1>
     <div ui-view></div>
     <md-list>
+      <md-list-item>
+        Like | Do Not Like | Locale
+      </md-list-item>
       <md-list-item ng-repeat="locale in locales">
         <md-checkbox ng-model="locale.like"> </md-checkbox>
         <md-checkbox ng-model="locale.donotlike"> </md-checkbox>
+        {{locale.name}}
       </md-list-item>
     </md-list>
   </md-content>

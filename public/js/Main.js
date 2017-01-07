@@ -1,11 +1,11 @@
 var app = angular.module('bennetti', [ 'ngMaterial', 'ui.router' ]);
 
-app.controller('UserController', [
-  '$scope', 'UserFactory',
-  UserController
+app.controller('HomeController', [
+  '$scope', 'HomeService',
+  HomeService
 ]);
 
-app.factory('UserFactory', UserFactory);
+app.factory('HomeService', HomeService);
 
 app.config(function($stateProvider){
     $stateProvider.state('home',
