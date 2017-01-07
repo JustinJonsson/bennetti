@@ -1,2 +1,3 @@
-{ "id" : 1000001, "name" : { "first" : Justin, "last" : Jonsson}, "username" : malapardis, "email" : justin.jonsson@gmail.com }
-{ "id" : 1000002, "name" : { "first" : Clayton, "last" : Swindoll}, "username" : autolyze, "email" : autolyze@gmail.com }
+{ "id" : 1000001, "name" : { "first" : "Justin", "last" : "Jonsson"}, "username" : "malapardis", "email" : "justin.jonsson@gmail.com" },
+{ "id" : 1000002, "name" : { "first" : "Clayton", "last" : "Swindoll"}, "username" : "autolyze", "email" : "autolyze@gmail.com" }
+
