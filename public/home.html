@@ -1,1 +1,12 @@
-<h1>What's for lunch?</h1>
+<div class="container" layout="row" ng-controller="HomeController">
+  <md-content flex id="content" >
+    <h1>What's for lunch?</h1>
+    <div ui-view></div>
+    <md-list>
+      <md-list-item ng-repeat="locale in locales">
+        <md-checkbox ng-model="locale.like"> </md-checkbox>
+        <md-checkbox ng-model="locale.donotlike"> </md-checkbox>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</div>
