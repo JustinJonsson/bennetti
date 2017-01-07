@@ -6,3 +6,4 @@
 { "id" : 1000006, "name" : "Obao", "address" : { "number" : 38, "street" : "Water Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Thai", "Asian", "Noodles", "Soup" ] }
 { "id" : 1000007, "name" : "Dig Inn", "address" : { "number" : 80, "street" : "Broad Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : false, "cuisine" : [ "Farm to Table", "Casual", "American", "Bowls" ] }
 { "id" : 1000008, "name" : "Battery Gardens", "address" : { "number" : 1, "street" : "Battery Place", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : false, "dinein" : true, "cuisine" : [ "Beer", "Burgers" ] }
+{ "id" : 1000009, "name" : "Lenwich", "address" : { "number" : 32, "street" : "Water Street", "city" : "New York", "state" : "New York", "zip" : 10004 }, "takeout" : true, "dinein" : true, "cuisine" : [ "Sandwiches", "Salads" ] }
