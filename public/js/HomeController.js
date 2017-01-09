@@ -1,4 +1,4 @@
-function HomeController($scope, HomeService){
-  $scope.locales = HomeService.localeList;
-  console.log($scope.users);
+function HomeController($scope, HomeFactory){
+  $scope.locales = HomeFactory.localeList;
+  console.log($scope.locales);
 }

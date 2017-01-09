@@ -1,4 +1,4 @@
-function HomeService(){
+function HomeFactory(){
   var locales = {};
 
   locales.localeList= [
@@ -41,7 +41,7 @@ function HomeService(){
       name: 'Lenwich',
       like: false,
       donotlike: false
-    },
+    }
   ];
 
   return locales;
