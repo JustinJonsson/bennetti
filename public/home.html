@@ -22,8 +22,8 @@
       </thead>
       <tbody>
       <tr ng-repeat="locale in locales">
-        <td class="mdl-data-table__cell--non-numeric"><md-checkbox ng-model="locale.like"> </md-checkbox></td>
-        <td class="mdl-data-table__cell--non-numeric"><md-checkbox ng-model="locale.donotlike"> </md-checkbox></td>
+        <td class="mdl-data-table__cell--non-numeric"><md-checkbox aria-label="like" ng-model="locale.like" ng-click="checkuncheck(locale, 'like')"> </md-checkbox></td>
+        <td class="mdl-data-table__cell--non-numeric"><md-checkbox aria-label="donotlike" ng-model="locale.donotlike" ng-click="checkuncheck(locale, 'donotlike')"> </md-checkbox></td>
         <td class="mdl-data-table__cell--non-numeric">{{locale.name}}</td>
       </tr>
       </tbody>

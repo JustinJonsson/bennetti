@@ -1,7 +1,7 @@
 function HomeFactory(){
   var locales = {};
 
-  locales.localeList= [
+  locales.localeList = [
     {
       name: 'Growler',
       like: true,
