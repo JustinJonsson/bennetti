@@ -1,7 +1,14 @@
-function HomeFactory(){
+function HomeFactory($http){
   var locales = {};
 
-  locales.localeList = [
+  $http.post("http://corvidian.com:3001/", {action : 'home'}).success(function(response){
+      console.log("success ", response);
+      locales.localeList = response;
+    }).error(function(response){
+      console.log("error ", response);
+    });
+
+  /*locales.localeList = [
     {
       name: 'Growler',
       like: true,
@@ -42,7 +49,7 @@ function HomeFactory(){
       like: false,
       donotlike: false
     }
-  ];
+  ];*/
 
   return locales;
 }
