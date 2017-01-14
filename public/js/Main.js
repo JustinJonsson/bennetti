@@ -1,16 +1,16 @@
 var app = angular.module('bennetti', [ 'ngMaterial', 'ui.router' ]);
 
-app.controller('UserController', [
+/*app.controller('UserController', [
   '$scope', 'UserFactory',
   UserController
-]);
+]);*/
 
 app.controller('HomeController', [
   '$scope', 'HomeFactory',
   HomeController
 ]);
 
-app.factory('UserFactory', UserFactory);
+//app.factory('UserFactory', UserFactory);
 
 app.factory('HomeFactory', HomeFactory);
 
