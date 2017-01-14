@@ -18,29 +18,79 @@ app.all('/', function(req, res, next){
   next();
 });
 
-function getuserPrefs(userId, res){
+function getUserPrefs(userId, res){
   MongoClient.connect(dburl,function(err,db){
     var locales = db.collection('locales');
     var prefs = db.collection('prefs');
  
     locales.find().toArray(function(err, docs){
       console.log(docs);
-      db.close();
+      if(docs) {
+        db.close();
+        //res.json(docs);
+        res.json(testArray);
+      }
     });
   });
 }
 
-app.get('/', function (req, res) {
-  var action = req.body.Action;
+app.post('/', function (req, res) {
+  var action = req.body.action;
 
+  console.log('action: ', action);
   switch(action){
     
-    case 'getUserPrefs':
-      var userId = req.body.UserId;
-      getUserPrevs(userId, res);
+    case 'home':
+      console.log('got in');
+      var userId = req.body.userId;
+      getUserPrefs(userId, res);
       break;
 
     default:
+      console.log('default');
       break;
   }
 });
+
+var testArray = [
+    {
+      name: 'Growler',
+      like: true,
+      donotlike: false
+    },
+    {
+      name: 'Ulysses',
+      like: true,
+      donotlike: false
+    },
+    {
+      name: 'GoGo',
+      like: false,
+      donotlike: true
+    },
+    {
+      name: 'Flavors',
+      like: false,
+      donotlike: true
+    },
+    {
+      name: 'Chopt',
+      like: true,
+      donotlike: false
+    },
+    {
+      name: 'Naya Express',
+      like: true,
+      donotlike: false
+    },
+    {
+      name: 'Dig Inn',
+      like: false,
+      donotlike: true
+    },
+    {
+      name: 'Lenwich',
+      like: false,
+      donotlike: false
+    }
+  ];
