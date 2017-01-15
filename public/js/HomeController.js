@@ -1,5 +1,8 @@
 function HomeController($scope, HomeFactory){
-  $scope.locales = HomeFactory.localeList;
+  HomeFactory.asyncInit().then(function(data){
+    console.log('controller data: ', data);
+    $scope.locales = data.data;
+  });
 
   function sumChecks(which){
     return $scope.locales.reduce(function(sum, b){

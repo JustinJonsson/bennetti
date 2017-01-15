@@ -1,14 +1,26 @@
 function HomeFactory($http){
   var locales = {};
 
-  $http.post("http://corvidian.com:3001/", {action : 'home'}).success(function(response){
-      console.log("success ", response);
-      locales.localeList = response;
+  locales.asyncInit = function(){
+    var postPromise = $http.post("http://corvidian.com:3001/", {action : 'home'}).success(function(response){
+      // still not 100% sure why this works. See
+      // http://plnkr.co/edit/TTlbSv?p=preview and
+      // http://stackoverflow.com/questions/12505760/processing-http-response-in-service
+      console.log("http success ", response);
+      console.log("http success data", response.data);
+      locales.localeList = response.data;
     }).error(function(response){
       console.log("error ", response);
     });
 
-  /*locales.localeList = [
+    return postPromise;
+  }
+
+/*  console.log('factory locales', locales);
+  console.log('factory locale.localeList', locales.localeList);*/
+
+/*
+  locales.localeList = [
     {
       name: 'Growler',
       like: true,
@@ -49,7 +61,8 @@ function HomeFactory($http){
       like: false,
       donotlike: false
     }
-  ];*/
+  ];
+*/
 
   return locales;
 }
