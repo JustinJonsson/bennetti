@@ -9,12 +9,12 @@ administration - preferences
   a json dataset mapping users to 5 yes and 3 no
   
 user homepage - preferences "Places"
-  display the preferences I've preloaded. Check that diff users show correct data
-  Then let me set my preferences.
-  mongo storage - 3 days
-  ui & server - set three veto locales - 3 days
-  ui & server - set five preferred locales - 1 day
-  set daily preference - 1 day
+  display the preferences I've preloaded. X
+  mongo storage - 3 days X
+  ui & server - set three veto locales - 3 days X
+  ui & server - set five preferred locales - 1 day X
+  Then let me set my preferences. - 2 days
+  set daily preference - 2 days
 
 user homepage - lunch bunch - "People"
   be able to search & invite users & set lunch date & time - 2 days

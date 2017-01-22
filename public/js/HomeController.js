@@ -1,7 +1,16 @@
 function HomeController($scope, HomeFactory){
+/*  HomeFactory.asyncInit().then(function(response){
+    console.log('controller response: ', response);
+    $scope.locales = response.data;
+  }, function(error){
+    console.log('error', error);
+  });*/
+
   HomeFactory.asyncInit().then(function(data){
     console.log('controller data: ', data);
-    $scope.locales = data.data;
+    $scope.locales = data;
+  }, function(error){
+    console.log('error', error);
   });
 
   function sumChecks(which){
