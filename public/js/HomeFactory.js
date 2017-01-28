@@ -17,9 +17,12 @@ function HomeFactory($http){
     return postPromise;
   }*/
 
+// asyncInit is a function. it returns a promise.
+// That promise has a callback, the first .then function, which just returns the response data.
+// The controller calls asyncInit
+
   locales.asyncInit = function(){
-    var postPromise = $http.post("http://corvidian.com:3001/", {action : 'home'}).then(function(response){
-      console.log("http response", response);
+    var postPromise = $http.post("http://corvidian.com:3001/", {action : 'home', userId : 1000001}, {cache : false}).then(function(response){
       console.log("http response.data", response.data);
       return response.data;
     }, function(response){
