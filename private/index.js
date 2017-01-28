@@ -22,13 +22,40 @@ function getUserPrefs(userId, res){
   MongoClient.connect(dburl,function(err,db){
     var locales = db.collection('locales');
     var prefs = db.collection('prefs');
- 
-    locales.find().toArray(function(err, docs){
-      console.log(docs);
+    var returnArr = []; 
+
+    prefs.findOne({userid:userId, like:{$in: [1000002]}},function(err,result){
+    //var prefret = prefs.findOne(query,function(err,result){
+      console.log('TOPone', userId,result);
+    });
+    
+    locales.find().forEach(
+      function (resdoc){
+        prefs.findOne({userid: userId, like: {$in: [resdoc.localeid]}}, function(err,prefdoc){
+          resdoc.like = true;
+          /*console.log('localeid', resdoc.localeid);
+          console.log('resdoc', resdoc);
+          console.log('like', prefdoc.like);
+          console.log('dislike', prefdoc.donotlike);*/
+        });
+        prefs.findOne({userid: userId, donotlike: {$in: [resdoc.localeid]}}, function(err,prefdoc){
+          resdoc.donotlike = true;
+        });
+        //console.log(prefs.findOne({userid: userId, donotlike: {$in: doc.localeid}}));
+        //doc.like = (prefs.findOne({userid: userId, like: {$in: doc.localeid}})?true:false);
+        //doc.donotlike = (prefs.findOne({userid: userId, donotlike: {$in: doc.localeid}})?true:false);
+        //console.log(doc);
+    });
+
+    //console.log(returnArr);
+    //locales.find().toArray(function(err, docs){
+    //prefs.find({userid:userId}).toArray(function(err, docs){
+    prefs.find({userid:userId}).toArray(function(err, docs){
       if(docs) {
         db.close();
-        //res.json(docs);
-        res.json(testArray);
+        console.log(docs);
+        res.json(docs);
+        //res.json(testArray);
       }
     });
   });
@@ -37,12 +64,11 @@ function getUserPrefs(userId, res){
 app.post('/', function (req, res) {
   var action = req.body.action;
 
-  console.log('action: ', action);
   switch(action){
     
     case 'home':
-      console.log('got in');
       var userId = req.body.userId;
+      console.log('Got userId: ', userId);
       getUserPrefs(userId, res);
       break;
 
