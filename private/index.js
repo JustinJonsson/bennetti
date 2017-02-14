@@ -18,48 +18,67 @@ app.all('/', function(req, res, next){
   next();
 });
 
+
 function getUserPrefs(userId, res){
   MongoClient.connect(dburl,function(err,db){
     var locales = db.collection('locales');
     var prefs = db.collection('prefs');
-    var returnArr = []; 
 
+    /*
     prefs.findOne({userid:userId, like:{$in: [1000002]}},function(err,result){
-    //var prefret = prefs.findOne(query,function(err,result){
       console.log('TOPone', userId,result);
+      console.log('');
     });
+    */
     
-    locales.find().forEach(
-      function (resdoc){
-        prefs.findOne({userid: userId, like: {$in: [resdoc.localeid]}}, function(err,prefdoc){
-          resdoc.like = true;
-          /*console.log('localeid', resdoc.localeid);
-          console.log('resdoc', resdoc);
-          console.log('like', prefdoc.like);
-          console.log('dislike', prefdoc.donotlike);*/
-        });
-        prefs.findOne({userid: userId, donotlike: {$in: [resdoc.localeid]}}, function(err,prefdoc){
-          resdoc.donotlike = true;
-        });
-        //console.log(prefs.findOne({userid: userId, donotlike: {$in: doc.localeid}}));
-        //doc.like = (prefs.findOne({userid: userId, like: {$in: doc.localeid}})?true:false);
-        //doc.donotlike = (prefs.findOne({userid: userId, donotlike: {$in: doc.localeid}})?true:false);
-        //console.log(doc);
+    var locStream = locales.find().stream();
+    var resArray = [];
+
+    locStream.on('data', function(doc){
+      var tempdoc = doc;
+      /*
+      prefs.findOne({userid: userId, like: {$in: [doc.localeid]}}, function(err,prefdoc){
+        if(prefdoc) {
+          doc.like = true;
+        }
+      });
+      prefs.findOne({userid: userId, donotlike: {$in: [doc.localeid]}}, function(err,prefdoc){
+        if(prefdoc) {
+          doc.donotlike = true;
+        }
+      });
+      */
+      var prefStream = prefs.find({userid: userId}).stream();
+
+      prefStream.on('data', function(pdoc){
+        var likeArr = pdoc.like;
+        var donotlikeArr = pdoc.donotlike;
+
+        if (likeArr.length > 0 && likeArr.indexOf(doc.localeid)>-1){
+          console.log('LIKE',doc.localeid,likeArr);
+          tempdoc.like = true;
+        }
+        if (donotlikeArr.length > 0 && donotlikeArr.indexOf(doc.localeid)>-1){
+          console.log('DONOTLIKE',doc.localeid,donotlikeArr);
+          tempdoc.donotlike = true;
+        }
+
+        resArray.push(tempdoc);
+        //console.log('just pushed',tempdoc);
+      });
     });
 
-    //console.log(returnArr);
-    //locales.find().toArray(function(err, docs){
-    //prefs.find({userid:userId}).toArray(function(err, docs){
-    prefs.find({userid:userId}).toArray(function(err, docs){
-      if(docs) {
-        db.close();
-        console.log(docs);
-        res.json(docs);
-        //res.json(testArray);
-      }
+    locStream.on('end', function(){
+      console.log('closed!');
+      console.log('Result Doc', resArray);
+      db.close();
+      //res.json(resArray);
+      res.json(testArray);
     });
+
   });
 }
+
 
 app.post('/', function (req, res) {
   var action = req.body.action;
